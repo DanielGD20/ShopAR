@@ -22,7 +22,7 @@ const CardComponent = (props) => {
     <motion.div variants={fadeInUp} className="col-md-6 col-xl-4 mb-5">
       <a className="card post-preview lift h-100" href="#!">
         <img
-          className="card-img-top"
+          className="card-img-top items"
           src={props.imageUrl}
           alt={props.imageAlt}
         />

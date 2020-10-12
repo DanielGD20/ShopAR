@@ -1,6 +1,6 @@
 const SearchBar = () => {
   return (
-    <div className="col-8">
+    <div className="col-8 pr-2">
       <form className="page-header-signup mr-3">
         <div className="form-row justify-content-center">
           <div className="col-8">
@@ -15,7 +15,7 @@ const SearchBar = () => {
           </div>
           <div className="col-4">
             <button
-              className="btn btn-teal btn-block btn-marketing rounded-pill"
+              className="btn btn-primary btn-block btn-marketing rounded-pill"
               type="submit"
             >
               Buscar

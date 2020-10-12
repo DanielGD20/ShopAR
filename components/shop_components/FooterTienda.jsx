@@ -16,26 +16,25 @@ const FooterTienda = (props) => {
         </div>
       </section> */}
       <footer className="footer pt-5 pb-5 bg-dark footer-dark">
-        <div className="container">
-          <div className="row">
-            <div className="col-6">
-              <Link href={props.href}>
-                <button
-                  className="btn btn-teal btn-block btn-marketing rounded-pill"
-                  type="submit"
-                >
-                  Regresar
-                </button>
-              </Link>
-            </div>
-            <div className="col-6">
+        <div class="d-flex flex-row-reverse">
+          <div class="p-2">
+            <button
+              className="btn btn-primary btn-block btn-marketing rounded-pill"
+              type="submit"
+              style={{ paddingLeft: "80px", paddingRight: "80px" }}
+            >
+              Comprar
+            </button>
+          </div>
+          <div class="p-2">
+            <Link href={props.href}>
               <button
-                className="btn btn-teal btn-block btn-marketing rounded-pill"
+                className="btn btn-twitter btn-block btn-marketing rounded-pill"
                 type="submit"
               >
-                Comprar
+                Revisar el carrito de compras
               </button>
-            </div>
+            </Link>
           </div>
         </div>
       </footer>

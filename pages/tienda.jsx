@@ -76,7 +76,7 @@ const FirstPage = () => {
                   return <CategoriaItem />;
                 })}
               </ContentCategoria>
-              <ContentShop>
+              <ContentShop name="Bershka">
                 <ContentGeneric />
               </ContentShop>
             </div>

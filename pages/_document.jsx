@@ -9,7 +9,7 @@ class MyDocument extends Document {
           <meta charSet="utf-8" />
           <meta name="theme-color" content="#000000" />
           <script src="../src/js/mainBanner.js"></script>
-          <link rel="icon" href="../src/assets/img/icon.png"></link>
+          <link rel="icon" href="/images/ar.png"></link>
         </Head>
         <body>
           <Main />

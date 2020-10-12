@@ -1,28 +1,28 @@
 const dataShops = [
   {
     id: "001",
-    title: "Imagen de prueba 1",
+    title: "Bershka",
     alt: "Tienda 1",
     image: "https://source.unsplash.com/random",
     href: "/tienda",
   },
   {
     id: "002",
-    title: "Imagen de prueba 2",
+    title: "Pull&bear",
     alt: "Tienda 2",
     image: "https://source.unsplash.com/random",
     href: "/tienda",
   },
   {
     id: "003",
-    title: "Imagen de prueba 3",
+    title: "Sara",
     alt: "Tienda 3",
     image: "https://source.unsplash.com/random",
     href: "/tienda",
   },
   {
     id: "004",
-    title: "Imagen de prueba 4",
+    title: "ShopAR Souvenirs",
     alt: "Tienda 4",
     image: "https://source.unsplash.com/random",
     href: "/tienda",

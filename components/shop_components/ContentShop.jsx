@@ -12,12 +12,15 @@ const stagger = {
 const ContentShop = (props) => {
   return (
     <div className="col-9">
-      <div className="row">
-        <div className="col-4 pt-2">
-          <h2>Content Shop</h2>
+      <div className="container">
+        <div className="row">
+          <div className="col-4 pt-2 ml-0 pl-0">
+            <h2>{props.name} Comunica</h2>
+          </div>
+          <SearchBar />
         </div>
-        <SearchBar />
       </div>
+
       <motion.div
         variants={stagger}
         className="row mr-2 overflow-auto page-overflow"

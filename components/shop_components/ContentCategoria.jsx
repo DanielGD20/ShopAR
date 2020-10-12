@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const stagger = {
   animate: {
@@ -12,7 +13,11 @@ const ContentCategoria = (props) => {
   return (
     <div className="col-3">
       <div className="ml-3 pb-4">
-        <h2>Content Categoria</h2>
+        <Link href="/">
+          <a className="btn btn-primary btn-block btn-lg btn-marketing ml-1">
+            Volver al Inicio
+          </a>
+        </Link>
       </div>
       <motion.div
         variants={stagger}
