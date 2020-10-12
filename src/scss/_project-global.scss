@@ -1,0 +1,162 @@
+// This file is intentionally blank
+// Use this file to override SCSS within the project, or to add new SCSS for creating your own CSS components
+
+header {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.header-tienda {
+  height: 150px;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.texto {
+  font-size: 30px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+header .imagen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+.page-header {
+  padding-top: 6rem !important;
+}
+
+.title {
+  font-size: 3.5rem !important;
+}
+.subtitle {
+  font-size: 1.8rem !important;
+}
+
+.card > .lift {
+  background-color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+  .title {
+    font-size: 2.5rem !important;
+  }
+  .subtitle {
+    font-size: 1.8rem !important;
+  }
+}
+
+html {
+  overflow: scroll;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
+.page-overflow {
+  min-height: 20px;
+  max-height: 74.3vh;
+}
+
+.categories {
+  height: 120px;
+  object-fit: cover;
+}
+.index-menu {
+  height: 300px;
+  object-fit: cover;
+}
+
+.items {
+  height: 200px;
+  object-fit: cover;
+}
+
+.footer-fixed {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  color: #fff;
+  transform: translate(-50%, -50%);
+}
+
+/* Centered text */
+.centered-2 {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  color: #fff;
+  transform: translate(-50%, -50%);
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+// .scrolling-wrapper-flexbox {
+//   display: flex;
+//   flex-wrap: nowrap;
+//   overflow-x: auto;
+//   -webkit-overflow-scrolling: touch;
+//   .card {
+//     flex: 0 0 auto;
+//   }
+// }
+
+// .scrolling-wrapper {
+//   overflow-x: scroll;
+//   overflow-y: hidden;
+//   white-space: nowrap;
+//   flex-wrap: nowrap;
+//   .card {
+//     display: inline-block;
+//   }
+// }
