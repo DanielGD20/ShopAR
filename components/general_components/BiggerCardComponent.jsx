@@ -19,37 +19,23 @@ const fadeInUp = {
 
 const BiggerCardComponent = (props) => {
   return (
-    <motion.div variants={fadeInUp}>
-      <a
-        className="card post-preview post-preview-featured lift mb-5"
-        href="#!"
-      >
-        <div className="row no-gutters">
-          <div className="col-lg-5">
-            <div
-              className="post-preview-featured-img"
-              style={{
-                backgroundImage: `url(${props.imageUrl})`,
-              }}
-            />
-          </div>
-          <div className="col-lg-7">
-            <div className="card-body">
-              <div className="py-5">
-                <h5 className="card-title">{props.title}</h5>
-                <p className="card-text">{props.description}</p>
-              </div>
-              <hr />
-              <div className="post-preview-meta">
-                <img
-                  className="post-preview-meta-img"
-                  src="/images/ar.png"
-                />
-                <div className="post-preview-meta-details">
-                  <div className="post-preview-meta-details-name">
-                    <h3>¡Realidad Aumentada!</h3>
-                  </div>
-                </div>
+    <motion.div variants={fadeInUp} className="col-md-12 col-xl-12 col-xxl-12 mb-5">
+      <a className="card post-preview lift h-100" href="#!">
+        <img
+          className="card-img-top items"
+          src={props.imageUrl}
+          alt={props.imageAlt}
+        />
+        <div className="card-body">
+          <h5 className="card-title">{props.title}</h5>
+          <p className="card-text">{props.description}</p>
+        </div>
+        <div className="card-footer">
+          <div className="post-preview-meta">
+            <img className="post-preview-meta-img" src="/images/ar.png" />
+            <div className="post-preview-meta-details">
+              <div className="post-preview-meta-details-name">
+                ¡Realidad Aumentada!
               </div>
             </div>
           </div>

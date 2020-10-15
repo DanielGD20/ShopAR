@@ -1,4 +1,5 @@
 import Svg from "./svg";
+import Banner from "../general_components/Banner";
 
 const Header = (props) => {
   return (
@@ -6,7 +7,6 @@ const Header = (props) => {
       <div className="overlay">
         <Svg />
       </div>
-      <img className="imagen" src="/images/foto1.jpg" alt="foto1" />
       <div className="container h-100">
         <div className="d-flex h-100 text-center align-items-center">
           <div className="w-100 text-white">
@@ -22,7 +22,9 @@ const Header = (props) => {
           </div>
         </div>
       </div>
+      <Banner />
       <Svg />
+      {/* <img className="imagen" src="/images/foto1.jpg" alt="foto1" /> */}
     </header>
   );
 };

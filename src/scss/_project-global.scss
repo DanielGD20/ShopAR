@@ -38,9 +38,7 @@ header .overlay {
   z-index: 1;
 }
 
-header .imagen {
-  position: absolute;
-  top: 50%;
+.imagen {
   left: 50%;
   min-width: 100%;
   min-height: 100%;
@@ -92,7 +90,7 @@ html {
 
 .page-overflow {
   min-height: 20px;
-  max-height: 74.3vh;
+  max-height: 78.1vh;
 }
 
 .categories {

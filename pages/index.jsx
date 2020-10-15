@@ -6,10 +6,9 @@ import MenuTiendas from "../components/index_components/MenuTiendas";
 import ItemTienda from "../components/index_components/ItemTienda";
 import Footer from "../components/index_components/Footer";
 import { motion } from "framer-motion";
-import Banner from "../components/general_components/banner";
-import Tienda from "../components/index_components/ItemTienda";
 
 const Index = (props) => {
+  console.log(props.shops);
   return (
     <motion.div
       exit="pageExit"
@@ -36,13 +35,14 @@ const Index = (props) => {
       </Header>
       <Container title="ShopAR">
         <MenuTiendas>
-          {props.shops.data.map((tienda) => {
+          {props.shops.map((tienda) => {
             return (
               <ItemTienda
                 title={tienda.title}
                 alt={tienda.alt}
                 image={tienda.image}
                 href={tienda.href}
+                name={tienda.title}
               />
             );
           })}
@@ -55,8 +55,9 @@ const Index = (props) => {
 
 Index.getInitialProps = async (ctx) => {
   const response = await fetch("http://localhost:3000/api/shops");
-  const data = await response.json();
-  return { shops: data };
+  const shops = await response.json();
+  console.log(shops);
+  return { shops };
 };
 
 export default Index;

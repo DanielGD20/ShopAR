@@ -1,35 +1,18 @@
-const dataShops = [
-  {
-    id: "001",
-    title: "Bershka",
-    alt: "Tienda 1",
-    image: "https://source.unsplash.com/random",
-    href: "/tienda",
-  },
-  {
-    id: "002",
-    title: "Pull&bear",
-    alt: "Tienda 2",
-    image: "https://source.unsplash.com/random",
-    href: "/tienda",
-  },
-  {
-    id: "003",
-    title: "Sara",
-    alt: "Tienda 3",
-    image: "https://source.unsplash.com/random",
-    href: "/tienda",
-  },
-  {
-    id: "004",
-    title: "ShopAR Souvenirs",
-    alt: "Tienda 4",
-    image: "https://source.unsplash.com/random",
-    href: "/tienda",
-  },
-];
+import { firestore } from "../../firebase/admin";
 
-export default (req, res) => {
-  (res.statusCode = 200), res.setHeader("content-type", "application/json");
-  res.end(JSON.stringify({ data: dataShops }));
-};
+function getShops(req, res) {
+  firestore
+    .collection("shops")
+    .get()
+    .then((snapshot) => {
+      let sendData = [];
+      snapshot.docs.map((doc) => sendData.push(doc.data()));
+      res.json(sendData);
+      res.status(500).end();
+    })
+    .catch(() => {
+      res.status(404).end();
+    });
+}
+
+export default getShops;

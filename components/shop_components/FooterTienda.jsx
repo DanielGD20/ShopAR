@@ -15,7 +15,7 @@ const FooterTienda = (props) => {
           </svg>
         </div>
       </section> */}
-      <footer className="footer pt-5 pb-5 bg-dark footer-dark">
+      <footer className="footer pt-3 pb-3 bg-dark footer-dark">
         <div class="d-flex flex-row-reverse">
           <div class="p-2">
             <button

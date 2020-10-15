@@ -1,11 +1,11 @@
-import Svg from "../index_components/svg";
+// import Svg from "../index_components/svg";
+import Banner from "../general_components/Banner";
+
 const HeaderTienda = (props) => {
   return (
     <header className="header-tienda mb-4">
       <div className="overlay">
-        <Svg />
       </div>
-      <img className="imagen" src={props.imageUrl} alt="foto1" />
       <div className="container h-100">
         <div className="d-flex h-100 text-center align-items-center">
           <div className="w-100 text-white">
@@ -21,7 +21,7 @@ const HeaderTienda = (props) => {
           </div>
         </div>
       </div>
-      <Svg />
+      <Banner />
     </header>
   );
 };
