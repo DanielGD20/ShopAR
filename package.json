@@ -26,6 +26,8 @@
     "react-dom": "^16.13.1",
     "react-slick": "^0.27.11",
     "sass": "^1.26.11",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "swr": "^0.3.6",
+    "unfetch": "^4.2.0"
   }
 }

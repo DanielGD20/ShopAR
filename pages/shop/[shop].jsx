@@ -1,31 +1,57 @@
+//Imports de componentes
 import Container from "../../components/general_components/Container";
-import HeaderTienda from "../../components/shop_components/HeaderTienda";
-import FooterTienda from "../../components/shop_components/FooterTienda";
-import ContentCategoria from "../../components/shop_components/ContentCategoria";
+import HeaderTienda from "../../components/shop_components/topbot/HeaderTienda";
+import FooterTienda from "../../components/shop_components/topbot/FooterTienda";
+import ContentCategoria from "../../components/shop_components/categorias/ContentCategoria";
 import ContentShop from "../../components/shop_components/ContentShop";
-import Title from "../../components/general_components/Title";
-import CategoriaItem from "../../components/shop_components/CategoriaItem";
-import CardComponent from "../../components/general_components/CardComponent";
-import BiggerCardComponent from "../../components/general_components/BiggerCardComponent";
+import Title from "../../components/general_components/header/Title";
+import CategoriaItem from "../../components/shop_components/categorias/CategoriaItem";
+import CardComponent from "../../components/general_components/card/CardComponent";
+import BiggerCardComponent from "../../components/general_components/card/BiggerCardComponent";
 
+//Imports para librerias de react y manejo de hooks
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import useSWR from "swr";
 
-const fakeData = [1, 2, 3, 4];
+//Fetcher para tomar los datos del api
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
-const ShopPage = (props) => {
+const ShopPage = () => {
+  //Controladores de estado
   const [categoryClicked, setCategoryClicked] = useState(false);
+  const [nameCategory, setNameCategory] = useState("");
+  const [dataShopAsync, setDataShopAsync] = useState([]);
+
+  //Multiples fetch por componentes
+  let categorias = [];
+  const { data } = useSWR("/api/categorias", fetcher);
+  data == undefined ? (categorias = []) : (categorias = data);
+
+  //Uso de router para obtener querys y categorias
   const router = useRouter();
   const { shop } = router.query;
-  let category = props.name + " Comunica";
+  const generalCategory = shop + " Comunica";
 
-  const renderDataCategory = (newState, nameCategory) => {
-    console.log(nameCategory);
-    category = nameCategory;
+  //Funcion para renderizar los datos de un componente hijo clickeado
+  const renderDataCategory = (newState) => {
     setCategoryClicked(newState);
   };
+  const getCategoryName = (nameCategory) => {
+    setNameCategory(nameCategory.toUpperCase());
+  };
+  const getItemShop = (items) => {
+    items == undefined ? setDataShopAsync([1]) : setDataShopAsync(items);
+  };
 
+  //Use efect para cargar en true la pestaña de comunicacion apenas
+  //se inicalice el componente
+  useEffect(() => {
+    setCategoryClicked(true);
+  }, []);
+
+  //Funcion principal
   return (
     <motion.div
       exit="pageExit"
@@ -54,7 +80,7 @@ const ShopPage = (props) => {
           <div className="col-12">
             <div className="row">
               <ContentCategoria>
-                {props.categorias.map((categoria) => {
+                {categorias.map((categoria) => {
                   return (
                     <CategoriaItem
                       categoryUrl={categoria.url}
@@ -62,32 +88,38 @@ const ShopPage = (props) => {
                       categoryAlt={categoria.name}
                       color={categoria.color}
                       changeDataShop={renderDataCategory}
+                      getCategoryName={getCategoryName}
                     />
                   );
                 })}
               </ContentCategoria>
 
               {categoryClicked ? (
-                <ContentShop name={category}>
-                  {fakeData.map((item) => {
-                    return (
-                      <CardComponent
-                        imageUrl="https://source.unsplash.com/random"
-                        imageAlt="Al"
-                        title="Element"
-                        description="Element 1 description"
-                      />
-                    );
-                  })}
-                </ContentShop>
-              ) : (
-                <ContentShop name={category}>
+                <ContentShop
+                  name={generalCategory.toUpperCase()}
+                  getItemShop={getItemShop}
+                >
                   <BiggerCardComponent
                     imageUrl="https://source.unsplash.com/vZJdYl5JVXY/660x360"
                     title="Bigger component title"
                     description="bigger component description"
                   />
                 </ContentShop>
+              ) : (
+                <>
+                  <ContentShop name={nameCategory} getItemShop={getItemShop}>
+                    {dataShopAsync.map((item) => {
+                      return (
+                        <CardComponent
+                          imageUrl={item.imageUrl}
+                          imageAlt={item.imageAlt}
+                          title={item.title}
+                          description={item.description}
+                        />
+                      );
+                    })}
+                  </ContentShop>
+                </>
               )}
             </div>
           </div>
@@ -96,12 +128,6 @@ const ShopPage = (props) => {
       <FooterTienda href="/" />
     </motion.div>
   );
-};
-
-ShopPage.getInitialProps = async (ctx) => {
-  const response = await fetch("http://localhost:3000/api/categorias");
-  const categorias = await response.json();
-  return { categorias };
 };
 
 export default ShopPage;

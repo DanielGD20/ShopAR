@@ -1,13 +1,13 @@
 import Head from "next/head";
 
-const Container = (props) => {
+const Container = ({ title, children }) => {
   return (
     <div>
       <Head>
-        <title>{props.title}</title>
+        <title>{title}</title>
         <title>ShopAR</title>
       </Head>
-      <div>{props.children}</div>
+      <div>{children}</div>
     </div>
   );
 };

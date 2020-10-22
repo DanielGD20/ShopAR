@@ -1,14 +1,16 @@
-// import fetch from "isomorphic-fetch";
+//Import de conponentes de react
 import Container from "../components/general_components/Container";
-import Title from "../components/general_components/Title";
-import Header from "../components/index_components/Header";
-import MenuTiendas from "../components/index_components/MenuTiendas";
-import ItemTienda from "../components/index_components/ItemTienda";
-import Footer from "../components/index_components/Footer";
+import Title from "../components/general_components/header/Title";
+import Header from "../components/index_components/topbot/Header";
+import Footer from "../components/index_components/topbot/Footer";
+import MenuTiendas from "../components/index_components/tiendas/MenuTiendas";
+import ItemTienda from "../components/index_components/tiendas/ItemTienda";
+
+//Import de librerias externas
 import { motion } from "framer-motion";
 
-const Index = (props) => {
-  console.log(props.shops);
+const Index = ({ shops }) => {
+  //Funcion Principal
   return (
     <motion.div
       exit="pageExit"
@@ -35,14 +37,13 @@ const Index = (props) => {
       </Header>
       <Container title="ShopAR">
         <MenuTiendas>
-          {props.shops.map((tienda) => {
+          {shops.map((tienda) => {
             return (
               <ItemTienda
                 title={tienda.title}
                 alt={tienda.alt}
                 image={tienda.image}
                 href={tienda.href}
-                name={tienda.title}
               />
             );
           })}
