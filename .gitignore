@@ -1,3 +1,4 @@
 node_modules
 .DS_Store
 pages/firebase/firebasekey.json
+.next
