@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import Modal from "./Modal";
-import { useEffect, useState } from "react";
+import Modal from "react-modal";
+import { useState } from "react";
+import ItemModal from "../../general_components/card/ItemModal";
 
 const easing = [0.6, -0.05, 0.01, 0.99];
 
@@ -18,39 +19,86 @@ const fadeInUp = {
     },
   },
 };
+const customStyles = {
+  overlay: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: "rgba(255, 255, 255, 0.75)",
+  },
+  content: {
+    position: "absolute",
+    top: "14%",
+    left: "27%",
+    right: "40px",
+    bottom: "",
+    border: "1px solid #ccc",
+    background: "#fff",
+    overflow: "auto",
+    WebkitOverflowScrolling: "touch",
+    borderRadius: "15px",
+    outline: "none",
+    padding: "20px",
+    boxShadow: "0 0 20px gray",
+  },
+};
+Modal.setAppElement("#__next");
 
-const CardComponent = ({ imageUrl, imageAlt, title, description }) => {
-  const [itemToggled, setItemToggled] = useState(false);
+const CardComponent = ({ imageUrl, imageAlt, title, description, isNuevo }) => {
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+  function openModal() {
+    setIsOpen(true);
+  }
 
   return (
-    <motion.div variants={fadeInUp} className="col-md-6 col-xl-4 mb-5">
-      <a className="card post-preview lift h-100" href="#!">
-        <img className="card-img-top items" src={imageUrl} alt={imageAlt} />
+    <motion.div
+      variants={fadeInUp}
+      className="col-md-6 col-xl-4 mb-5"
+      style={{ cursor: "pointer" }}
+    >
+      <a className="card post-preview lift h-100" href="#!" onClick={openModal}>
+        <img
+          className="card-img-top items"
+          src={imageUrl}
+          alt={imageAlt}
+          style={isNuevo ? { height: "400px" } : { height: "200px" }}
+        />
         <div className="card-body">
-          <h5 className="card-title">{title}</h5>
+          <h3 className="card-title">{title}</h3>
           <p className="card-text">{description}</p>
         </div>
         <div className="card-footer">
           <div className="post-preview-meta">
-            <img className="post-preview-meta-img" src="/images/ar.png" />
+            <img className="post-preview-meta-img" src="/images/info.png" />
             <div className="post-preview-meta-details">
+              <a data-8code="6rfgc"></a>
               <div className="post-preview-meta-details-name">
-                ¡Realidad Aumentada!
+                Más Información
               </div>
             </div>
           </div>
         </div>
-        <button
-          className="btn btn-primary"
-          onClick={() => setItemToggled(true)}
-        >
-          Activame
-        </button>
-        <Modal
-          itemToggled={itemToggled}
-          setItemToggled={setItemToggled}
-        ></Modal>
       </a>
+      <Modal
+        isOpen={modalIsOpen}
+        style={customStyles}
+        onRequestClose={() => closeModal()}
+        id="modal"
+      >
+        <ItemModal
+          closeModal={closeModal}
+          imgModal={imageUrl}
+          productName={title}
+          description={description}
+          price="30.00"
+        />
+      </Modal>
     </motion.div>
   );
 };

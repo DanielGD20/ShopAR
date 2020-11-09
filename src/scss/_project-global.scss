@@ -108,6 +108,11 @@ html {
   object-fit: cover;
 }
 
+.image-modal {
+  height: 500px;
+  object-fit: cover;
+}
+
 .footer-fixed {
   position: fixed;
   left: 0;
@@ -133,6 +138,16 @@ html {
   transform: translate(-50%, -50%);
 }
 
+/* Centered text */
+.centered-3 {
+  position: absolute;
+  top: 30%;
+  right: 20%;
+  left: 28%;
+  color: #fff;
+  transform: translate(-50%, -50%);
+}
+
 /* Top left text */
 .top-left {
   position: absolute;
@@ -140,22 +155,36 @@ html {
   left: 16px;
 }
 
-// .scrolling-wrapper-flexbox {
-//   display: flex;
-//   flex-wrap: nowrap;
-//   overflow-x: auto;
-//   -webkit-overflow-scrolling: touch;
-//   .card {
-//     flex: 0 0 auto;
-//   }
-// }
+/* Loader */
+.loader {
+  width: 10px;
+  height: 10px;
+  margin: 40px auto;
+  border-radius: 50%;
+  background: #5784d6;
+  margin-left: 39%;
+}
 
-// .scrolling-wrapper {
-//   overflow-x: scroll;
-//   overflow-y: hidden;
-//   white-space: nowrap;
-//   flex-wrap: nowrap;
-//   .card {
-//     display: inline-block;
-//   }
-// }
+.bg {
+  /* The image used */
+  background-image: url("http://localhost:3000/images/foto4.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+
+svg {
+  fill: white;
+}

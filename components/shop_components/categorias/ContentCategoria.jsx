@@ -12,10 +12,10 @@ const stagger = {
 const ContentCategoria = ({ children }) => {
   return (
     <div className="col-3">
-      <div className="ml-3 pb-4">
-        <Link href="/">
-          <a className="btn btn-primary btn-block btn-lg btn-marketing ml-1">
-            Volver al Inicio
+      <div className="ml-3 pb-2 pt-0">
+        <Link href="/menu">
+          <a className="btn btn-primary btn-block btn-lg btn-marketing ml-1 pt-4 pb-4">
+            Seleccionar otra tienda
           </a>
         </Link>
       </div>

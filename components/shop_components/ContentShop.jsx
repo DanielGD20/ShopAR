@@ -1,7 +1,8 @@
 import SearchBar from "../general_components/SearchBar";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import useSWR from "swr";
+import Loader from "../general_components/Loader";
 
 const stagger = {
   animate: {
@@ -14,14 +15,13 @@ const stagger = {
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const ContentShop = ({ name, children, getItemShop }) => {
-  const nameSmall = name.toLowerCase();
+  const nameSmall = name == "¡NUEVOS!" ? "new" : name.toLowerCase();
+  const [loadSpecial, setLoadSpecial] = useState(false);
 
   //Multiples fetch por componentes
   const { data } = useSWR(`/api/items/${nameSmall}`, fetcher);
-  const items = data;
-
   useEffect(() => {
-    getItemShop(items);
+    getItemShop(data);
   }, []);
 
   return (
@@ -29,7 +29,7 @@ const ContentShop = ({ name, children, getItemShop }) => {
       <div className="container">
         <div className="row">
           <div className="col-4 pt-2 ml-0 pl-0">
-            <h2>{name}</h2>
+            <h2>{name == "¡NUEVOS!" ? "NUEVAS IMPLEMENTACIÓNES" : name}</h2>
           </div>
           <SearchBar />
         </div>
@@ -41,11 +41,12 @@ const ContentShop = ({ name, children, getItemShop }) => {
       >
         <section className="bg-light py-3">
           <div className="container">
-            <div className="row">{children}</div>
+            <div className="row">
+              {loadSpecial ? <h1>AAAAAAAAAAAA</h1> : children}
+            </div>
           </div>
         </section>
       </motion.div>
-      <div className="generic"></div>
     </div>
   );
 };

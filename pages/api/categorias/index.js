@@ -3,6 +3,7 @@ import { firestore } from "../../firebase/admin";
 export default (req, res) => {
   firestore
     .collection("categorias")
+    .orderBy("orden", "asc")
     .get()
     .then((snapshot) => {
       let sendData = [];

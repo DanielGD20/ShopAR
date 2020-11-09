@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const easing = [0.6, -0.05, 0.01, 0.99];
 
-const fadeInUp = {
+const fadeInRight = {
   initial: {
-    y: 60,
+    x: -60,
     opacity: 0,
   },
   animate: {
-    y: 0,
+    x: 0,
     opacity: 1,
     transition: {
       duration: 0.6,
@@ -17,27 +18,36 @@ const fadeInUp = {
   },
 };
 
-const BiggerCardComponent = ({ imageUrl, imageAlt, title, description }) => {
+const BiggerCardComponent = ({
+  imageUrl,
+  imageAlt,
+  title,
+  description,
+  changeDataShopBigger,
+}) => {
+  const [biggerClicked, setBiggerClicked] = useState(false);
+
+  const changeData = () => {
+    setBiggerClicked((prevValue) => !prevValue);
+    changeDataShopBigger(biggerClicked);
+  };
+
   return (
     <motion.div
-      variants={fadeInUp}
+      variants={fadeInRight}
       className="col-md-12 col-xl-12 col-xxl-12 mb-5"
     >
       <a className="card post-preview lift h-100" href="#!">
-        <img className="card-img-top items" src={imageUrl} alt={imageAlt} />
+        <img
+          className="card-img-top items"
+          src={imageUrl}
+          alt={imageAlt}
+          style={{ height: "400px" }}
+          onClick={changeData}
+        />
         <div className="card-body">
-          <h5 className="card-title">{title}</h5>
+          <h1 className="card-title">{title}</h1>
           <p className="card-text">{description}</p>
-        </div>
-        <div className="card-footer">
-          <div className="post-preview-meta">
-            <img className="post-preview-meta-img" src="/images/ar.png" />
-            <div className="post-preview-meta-details">
-              <div className="post-preview-meta-details-name">
-                ¡Realidad Aumentada!
-              </div>
-            </div>
-          </div>
         </div>
       </a>
     </motion.div>

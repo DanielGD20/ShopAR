@@ -1,20 +1,18 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const FooterTienda = ({ href }) => {
+  const router = useRouter();
+
+  const mensaje = () => {
+    let valor = confirm("¿Estás segúro de que deseas salir?");
+    if (valor) {
+      router.push("/");
+    }
+  };
+
   return (
     <div className="footer-fixed">
-      {/* <section className="bg-light py-2">
-        <div className="svg-border-rounded text-dark">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 144.54 17.34"
-            preserveAspectRatio="none"
-            fill="currentColor"
-          >
-            <path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0" />
-          </svg>
-        </div>
-      </section> */}
       <footer className="footer pt-3 pb-3 bg-dark footer-dark">
         <div class="d-flex flex-row-reverse">
           <div class="p-2">
@@ -35,6 +33,15 @@ const FooterTienda = ({ href }) => {
                 Revisar el carrito de compras
               </button>
             </Link>
+          </div>
+          <div class="p-2" style={{ marginRight: "39%" }}>
+            <button
+              className="btn btn-danger btn-block btn-marketing rounded-pill pr-5 pl-5"
+              type="submit"
+              onClick={mensaje}
+            >
+              Salir
+            </button>
           </div>
         </div>
       </footer>

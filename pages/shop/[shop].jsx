@@ -14,15 +14,19 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import useSWR from "swr";
+import Loader from "../../components/general_components/Loader";
 
 //Fetcher para tomar los datos del api
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const ShopPage = () => {
   //Controladores de estado
-  const [categoryClicked, setCategoryClicked] = useState(false);
+  const [categoryClicked, setCategoryClicked] = useState(true);
   const [nameCategory, setNameCategory] = useState("");
   const [dataShopAsync, setDataShopAsync] = useState([]);
+  const [isLoading, setLoading] = useState(true);
+  const [lastState, setLastState] = useState(true);
+  const [clickedBigger, setClickedBigger] = useState(false);
 
   //Multiples fetch por componentes
   let categorias = [];
@@ -35,20 +39,55 @@ const ShopPage = () => {
   const generalCategory = shop + " Comunica";
 
   //Funcion para renderizar los datos de un componente hijo clickeado
-  const renderDataCategory = (newState) => {
-    setCategoryClicked(newState);
+  const changeDataShop = (newState) => {
+    console.log(newState);
+    if (newState == false) {
+      setLastState(newState);
+      setCategoryClicked(newState);
+    } else {
+      if (newState == lastState) {
+        console.log(newState + "" + lastState);
+        console.log("dos presionados");
+        setLastState(newState);
+        setCategoryClicked(newState);
+      } else {
+        setCategoryClicked(newState);
+      }
+    }
+  };
+  const changeDataShopBigger = (newState) => {
+    setClickedBigger(newState);
+    console.log(clickedBigger);
   };
   const getCategoryName = (nameCategory) => {
     setNameCategory(nameCategory.toUpperCase());
+    console.log(nameCategory);
   };
   const getItemShop = (items) => {
-    items == undefined ? setDataShopAsync([1]) : setDataShopAsync(items);
+    items == undefined ? setDataShopAsync([]) : setDataShopAsync(items);
+    console.log(dataShopAsync);
+  };
+
+  const loader = () => {
+    if (dataShopAsync.length == 0) {
+      setTimeout(() => {
+        setLoading(false);
+      }, 5000);
+    }
   };
 
   //Use efect para cargar en true la pestaña de comunicacion apenas
   //se inicalice el componente
   useEffect(() => {
-    setCategoryClicked(true);
+    if (dataShopAsync.length == 0) {
+      setTimeout(() => {
+        setLoading(false);
+      }, 5000);
+    }
+    if (!categoryClicked) {
+      setDataShopAsync([]);
+    }
+    setClickedBigger(false);
   }, []);
 
   //Funcion principal
@@ -87,27 +126,15 @@ const ShopPage = () => {
                       categoryName={categoria.name}
                       categoryAlt={categoria.name}
                       color={categoria.color}
-                      changeDataShop={renderDataCategory}
+                      changeDataShop={changeDataShop}
                       getCategoryName={getCategoryName}
                     />
                   );
                 })}
               </ContentCategoria>
-
-              {categoryClicked ? (
-                <ContentShop
-                  name={generalCategory.toUpperCase()}
-                  getItemShop={getItemShop}
-                >
-                  <BiggerCardComponent
-                    imageUrl="https://source.unsplash.com/vZJdYl5JVXY/660x360"
-                    title="Bigger component title"
-                    description="bigger component description"
-                  />
-                </ContentShop>
-              ) : (
+              {clickedBigger ? (
                 <>
-                  <ContentShop name={nameCategory} getItemShop={getItemShop}>
+                  <ContentShop name="new" getItemShop={getItemShop}>
                     {dataShopAsync.map((item) => {
                       return (
                         <CardComponent
@@ -120,12 +147,58 @@ const ShopPage = () => {
                     })}
                   </ContentShop>
                 </>
+              ) : categoryClicked ? (
+                <ContentShop
+                  name={generalCategory.toUpperCase()}
+                  getItemShop={getItemShop}
+                >
+                  <BiggerCardComponent
+                    imageUrl="/images/new.gif"
+                    title="¡Conóce las primeras implementaciones en Realidad Aumentada!"
+                    description="No te quedes sin probarlo"
+                    changeDataShopBigger={changeDataShopBigger}
+                  />
+                  <BiggerCardComponent
+                    imageUrl="/images/black.gif"
+                    title="¡Se acerca Black Friday!"
+                    description="Conóce nuestras ofertas %"
+                    changeDataShopBigger={changeDataShopBigger}
+                  />
+                  <BiggerCardComponent
+                    imageUrl="https://media.giphy.com/media/PtLRJXYSWDGOk/giphy.gif"
+                    title="Conóce Nuestras Ofertas del Día"
+                    description="No te quedes sin su producto"
+                    changeDataShopBigger={changeDataShopBigger}
+                  />
+                </ContentShop>
+              ) : (
+                <>
+                  <ContentShop name={nameCategory} getItemShop={getItemShop}>
+                    {isLoading ? (
+                      <Loader />
+                    ) : (
+                      dataShopAsync.map((item) => {
+                        return (
+                          <CardComponent
+                            imageUrl={item.imageUrl}
+                            imageAlt={item.imageAlt}
+                            title={item.title}
+                            description={item.description}
+                            isNuevo={
+                              item.nuevo != undefined ? item.nuevo : false
+                            }
+                          />
+                        );
+                      })
+                    )}
+                  </ContentShop>
+                </>
               )}
             </div>
           </div>
         </div>
       </Container>
-      <FooterTienda href="/" />
+      <FooterTienda href="/menu" />
     </motion.div>
   );
 };

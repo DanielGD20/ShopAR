@@ -27,14 +27,21 @@ const CategoriaItem = ({
   getCategoryName,
 }) => {
   const [isSelected, setSelected] = useState(false);
+
+  //Funcion para cambiar el color del boton
   var style = isSelected
     ? {
         transform: "scale(0.9)",
-        webkitTransform: "scale(0.9)",
-        backgroundColor: "gray",
+        webkitTransform: "scale(0.85)",
+        backgroundColor: "#1da1f2",
         cursor: "pointer",
       }
-    : { cursor: "pointer", backgroundColor: color };
+    : {
+        cursor: "pointer",
+        backgroundColor: "#333333",
+      };
+
+  //Funcion para cambiar de estado
   const cambiarEstado = () => {
     setSelected((prevValue) => !prevValue);
     changeDataShop(isSelected);

@@ -13,6 +13,7 @@ const Banner = () => {
     autoplay: true,
     adaptiveHeight: true,
     fade: true,
+    style:{}
   };
   return (
     <Slider {...settings}>

@@ -1,16 +1,24 @@
-//Import de conponentes de react
 import Container from "../components/general_components/Container";
-import Title from "../components/general_components/header/Title";
-import Header from "../components/index_components/topbot/Header";
-import Footer from "../components/index_components/topbot/Footer";
-import MenuTiendas from "../components/index_components/tiendas/MenuTiendas";
-import ItemTienda from "../components/index_components/tiendas/ItemTienda";
-
-//Import de librerias externas
+import Link from "next/link";
 import { motion } from "framer-motion";
 
-const Index = ({ shops }) => {
-  //Funcion Principal
+const easing = [0.6, -0.05, 0.01, 0.99];
+const fadeInRight = {
+  initial: {
+    x: -60,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: easing,
+    },
+  },
+};
+
+const ScreenSaver = () => {
   return (
     <motion.div
       exit="pageExit"
@@ -28,37 +36,35 @@ const Index = ({ shops }) => {
         },
       }}
     >
-      <Header>
-        <Title
-          titulo="ShopAR"
-          descripcion="¡Selecciona tu tienda favorita y comienza a experimentar la
-        realidad aumentada!"
-        />
-      </Header>
-      <Container title="ShopAR">
-        <MenuTiendas>
-          {shops.map((tienda) => {
-            return (
-              <ItemTienda
-                title={tienda.title}
-                alt={tienda.alt}
-                image={tienda.image}
-                href={tienda.href}
-              />
-            );
-          })}
-        </MenuTiendas>
+      <Container title="Background">
+        <div className="bg">
+          <div style={{ height: "110.4em" }}></div>
+          <motion.div
+            variants={fadeInRight}
+            className="centered-3"
+            align="center"
+          >
+            <h1 style={{ color: "white", fontSize: "50px" }}>
+              Bienvenido a <br /> ¡ShopAR!
+            </h1>
+            <br />
+            <h1 style={{ color: "white", fontSize: "30px" }}>
+              La única tienda virtual con realidad aumentada, visualiza tus
+              productos antes de comprarlos
+            </h1>
+            <br />
+            <Link href="/menu">
+              <a className="btn btn-primary btn-marketing btn-block btn-lg">
+                <h1 style={{ color: "white" }}>
+                  ¡Comenzar con la experiencia de realidad aumentada!
+                </h1>
+              </a>
+            </Link>
+          </motion.div>
+        </div>
       </Container>
-      <Footer />
     </motion.div>
   );
 };
 
-Index.getInitialProps = async (ctx) => {
-  const response = await fetch("http://localhost:3000/api/shops");
-  const shops = await response.json();
-  console.log(shops);
-  return { shops };
-};
-
-export default Index;
+export default ScreenSaver;
