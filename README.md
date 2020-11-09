@@ -22,3 +22,6 @@ afecta directamente a la compra de un producto, haciendo que mejore la experienc
 3. Instalar las dependencias con npm install.
 4. Ejecutar el servidor de prueba desde la carpeta de la aplicación con npm run dev.
 
+<p align="center">
+  <img src="./public/images/preview.gif" alt="Size Limit CLI" width="738">
+</p>
