@@ -23,5 +23,5 @@ afecta directamente a la compra de un producto, haciendo que mejore la experienc
 4. Ejecutar el servidor de prueba desde la carpeta de la aplicación con npm run dev.
 
 <p align="center">
-  <img src="./public/images/preview.gif" alt="Size Limit CLI" width="738">
+  <img src="./public/images/preview2.gif" alt="Size Limit CLI" width="490">
 </p>
