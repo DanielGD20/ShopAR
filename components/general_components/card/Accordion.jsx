@@ -1,7 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 
-const Accordion = ({ i, expanded, setExpanded }) => {
+const Accordion = ({ i, expanded, setExpanded, imgQR }) => {
   const isOpen = i === expanded;
+  console.log(imgQR);
 
   // By using `AnimatePresence` to mount and unmount the contents, we can animate
   // them in and out while also only rendering the contents of open accordions
@@ -40,18 +41,22 @@ const Accordion = ({ i, expanded, setExpanded }) => {
           >
             <div className="container">
               <div className="row">
-                <div className="col-8 mt-5" align="left">
-                  <h1 style={{ fontSize: "34px" }}>
-                    Accede a la realidad aumentada aqui escaneando el siguiente
-                    código.
+                <div className="col-6 pl-4 ml-0 mt-5 pr-0" align="left">
+                  <h1 style={{ fontSize: "25px" }}>
+                    Utiliza tu cámara para escanear el código y visualizar la realidad aumentada.
                   </h1>
                 </div>
-                <div className="col-4 mt-2 ml-0" align="center">
+                <div className="col-6 mt-2 ml-0" align="center">
                   <img
-                    src="/images/codehat.png"
+                    src={imgQR}
                     alt="Code"
                     className="img-responsive"
-                    style={{ height: "270px", paddingBottom:"20px", paddingTop:"20px", paddingRight:"30px" }}
+                    style={{
+                      height: "250px",
+                      paddingBottom: "20px",
+                      paddingTop: "20px",
+                      paddingRight: "30px",
+                    }}
                   />
                 </div>
               </div>

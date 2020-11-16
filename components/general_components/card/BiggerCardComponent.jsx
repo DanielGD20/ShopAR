@@ -47,7 +47,9 @@ const BiggerCardComponent = ({
         />
         <div className="card-body">
           <h1 className="card-title">{title}</h1>
-          <p className="card-text">{description}</p>
+          <p className="card-text">
+            <b>{description}</b>
+          </p>
         </div>
       </a>
     </motion.div>

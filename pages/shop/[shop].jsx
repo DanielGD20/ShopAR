@@ -142,6 +142,8 @@ const ShopPage = () => {
                           imageAlt={item.imageAlt}
                           title={item.title}
                           description={item.description}
+                          isNuevo={item.nuevo != undefined ? item.nuevo : false}
+                          imgQR={item.imgQR}
                         />
                       );
                     })}
@@ -155,7 +157,7 @@ const ShopPage = () => {
                   <BiggerCardComponent
                     imageUrl="/images/new.gif"
                     title="¡Conóce las primeras implementaciones en Realidad Aumentada!"
-                    description="No te quedes sin probarlo"
+                    description="No te quedes sin probarlo, selecciona 'NUEVOS' en el menú"
                     changeDataShopBigger={changeDataShopBigger}
                   />
                   <BiggerCardComponent
@@ -187,6 +189,7 @@ const ShopPage = () => {
                             isNuevo={
                               item.nuevo != undefined ? item.nuevo : false
                             }
+                            imgQR={item.imgQR}
                           />
                         );
                       })

@@ -1,9 +1,19 @@
 import { useState } from "react";
 import Accordion from "./Accordion";
 
-const ItemModal = ({ imgModal, productName, description, stars, price }) => {
+const moduleActive = true;
+
+const ItemModal = ({
+  imgModal,
+  productName,
+  description,
+  stars,
+  price,
+  imgQR,
+}) => {
   const [expanded, setExpanded] = useState(false);
 
+  console.log(imgQR);
   return (
     <div className="card post-preview lift mt-4" style={{ cursor: "pointer" }}>
       <img className="card-img-top img-fluid image-modal" src={imgModal} />
@@ -34,11 +44,20 @@ const ItemModal = ({ imgModal, productName, description, stars, price }) => {
           </button>
         </div>
       </div>
-      {accordionIds.map((i) => {
-        return (
-          <Accordion i={i} expanded={expanded} setExpanded={setExpanded} />
-        );
-      })}
+      {moduleActive ? (
+        accordionIds.map((i) => {
+          return (
+            <Accordion
+              i={i}
+              expanded={expanded}
+              setExpanded={setExpanded}
+              imgQR={imgQR}
+            />
+          );
+        })
+      ) : (
+        <hr />
+      )}
     </div>
   );
 };

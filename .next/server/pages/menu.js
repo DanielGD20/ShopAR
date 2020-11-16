@@ -117,7 +117,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/mnt/c/Users/antho/Desktop/ShopAR/components/general_components/Container.jsx";
+var _jsxFileName = "/mnt/c/Users/antho/Desktop/CARPETAS/ShopAR/components/general_components/Container.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -190,7 +190,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_slick__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-slick */ "react-slick");
 /* harmony import */ var react_slick__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_slick__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/mnt/c/Users/antho/Desktop/ShopAR/components/general_components/header/Banner.jsx";
+var _jsxFileName = "/mnt/c/Users/antho/Desktop/CARPETAS/ShopAR/components/general_components/header/Banner.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -288,7 +288,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "framer-motion");
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(framer_motion__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/mnt/c/Users/antho/Desktop/ShopAR/components/general_components/header/Title.jsx";
+var _jsxFileName = "/mnt/c/Users/antho/Desktop/CARPETAS/ShopAR/components/general_components/header/Title.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -355,7 +355,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Svg; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/mnt/c/Users/antho/Desktop/ShopAR/components/general_components/svg.jsx";
+var _jsxFileName = "/mnt/c/Users/antho/Desktop/CARPETAS/ShopAR/components/general_components/svg.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 function Svg() {
@@ -406,7 +406,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! framer-motion */ "framer-motion");
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(framer_motion__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/mnt/c/Users/antho/Desktop/ShopAR/components/index_components/tiendas/ItemTienda.jsx";
+var _jsxFileName = "/mnt/c/Users/antho/Desktop/CARPETAS/ShopAR/components/index_components/tiendas/ItemTienda.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -504,7 +504,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "framer-motion");
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(framer_motion__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/mnt/c/Users/antho/Desktop/ShopAR/components/index_components/tiendas/MenuTiendas.jsx";
+var _jsxFileName = "/mnt/c/Users/antho/Desktop/CARPETAS/ShopAR/components/index_components/tiendas/MenuTiendas.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -606,7 +606,7 @@ const MenuTiendas = ({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/mnt/c/Users/antho/Desktop/ShopAR/components/index_components/topbot/Footer.jsx";
+var _jsxFileName = "/mnt/c/Users/antho/Desktop/CARPETAS/ShopAR/components/index_components/topbot/Footer.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -731,7 +731,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _general_components_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../general_components/svg */ "./components/general_components/svg.jsx");
 /* harmony import */ var _general_components_header_Banner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../general_components/header/Banner */ "./components/general_components/header/Banner.jsx");
-var _jsxFileName = "/mnt/c/Users/antho/Desktop/ShopAR/components/index_components/topbot/Header.jsx";
+var _jsxFileName = "/mnt/c/Users/antho/Desktop/CARPETAS/ShopAR/components/index_components/topbot/Header.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -3751,7 +3751,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_index_components_tiendas_ItemTienda__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/index_components/tiendas/ItemTienda */ "./components/index_components/tiendas/ItemTienda.jsx");
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! framer-motion */ "framer-motion");
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(framer_motion__WEBPACK_IMPORTED_MODULE_7__);
-var _jsxFileName = "/mnt/c/Users/antho/Desktop/ShopAR/pages/menu.jsx";
+var _jsxFileName = "/mnt/c/Users/antho/Desktop/CARPETAS/ShopAR/pages/menu.jsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 //Import de conponentes de react

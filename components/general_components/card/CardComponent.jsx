@@ -46,8 +46,16 @@ const customStyles = {
 };
 Modal.setAppElement("#__next");
 
-const CardComponent = ({ imageUrl, imageAlt, title, description, isNuevo }) => {
+const CardComponent = ({
+  imageUrl,
+  imageAlt,
+  title,
+  description,
+  isNuevo,
+  imgQR,
+}) => {
   const [modalIsOpen, setIsOpen] = useState(false);
+  console.log(imgQR);
 
   function closeModal() {
     setIsOpen(false);
@@ -96,6 +104,7 @@ const CardComponent = ({ imageUrl, imageAlt, title, description, isNuevo }) => {
           imgModal={imageUrl}
           productName={title}
           description={description}
+          imgQR={imgQR}
           price="30.00"
         />
       </Modal>
