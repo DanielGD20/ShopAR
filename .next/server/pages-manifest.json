@@ -1,16 +1,9 @@
 {
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
-  "/api/categorias": "pages/api/categorias.js",
-  "/api/items/[id]": "pages/api/items/[id].js",
-  "/api/setDataItems/[category]": "pages/api/setDataItems/[category].js",
-  "/api/shops": "pages/api/shops.js",
-  "/firebase/admin": "pages/firebase/admin.js",
-  "/firebase/client": "pages/firebase/client.js",
-  "/": "pages/index.js",
-  "/menu": "pages/menu.js",
-  "/modal": "pages/modal.js",
+  "/_error": "pages/_error.js",
   "/shop/[shop]": "pages/shop/[shop].js",
-  "/shop/item/[item]": "pages/shop/item/[item].js",
-  "/_error": "pages/_error.js"
+  "/menu": "pages/menu.js",
+  "/api/items/[id]": "pages/api/items/[id].js",
+  "/api/categorias": "pages/api/categorias.js"
 }

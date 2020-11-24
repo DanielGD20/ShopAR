@@ -1,10 +1,13 @@
 import { firestore } from "../../firebase/admin";
 
 const dataItems = {
-  description: "Animación de un robot en realidad aumentada",
-  imageAlt: "Robot Animado",
-  imageUrl: "/images/animation.gif",
-  title: "Robot Animado",
+  description:
+    "Fotografia tomada por un ovni al momento de estar debajo de el, IA",
+  imageAlt: "Ovni",
+  imageUrl: "/images/ovni.gif",
+  title: "Foto tomada debajo del Ovni",
+  imgQR: "/svgs/foto.svg",
+  nuevo: true,
 };
 
 export default (req, res) => {

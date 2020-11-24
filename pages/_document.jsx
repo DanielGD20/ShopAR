@@ -7,7 +7,7 @@ class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <meta name="theme-color" content="#000000" />
-          <link rel="icon" href="/images/ar.png"></link>
+          <link rel="icon" href="/images/shoplogo.png"></link>
         </Head>
         <body>
           <Main />

@@ -50,11 +50,7 @@ const Index = ({ shops }) => {
       }}
     >
       <Header>
-        <Title
-          titulo="ShopAR"
-          descripcion="¡Selecciona tu tienda favorita y comienza a experimentar la
-        realidad aumentada!"
-        />
+        <Title titulo="ShopAR" inicio={true} />
       </Header>
       <Container title="ShopAR">
         <MenuTiendas>
