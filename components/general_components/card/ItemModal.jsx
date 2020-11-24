@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Accordion from "./Accordion";
 
-const moduleActive = true;
+var moduleActive = true;
 
 const ItemModal = ({
   imgModal,
@@ -11,9 +11,8 @@ const ItemModal = ({
   price,
   imgQR,
 }) => {
-  const [expanded, setExpanded] = useState(false);
-
-  console.log(imgQR);
+  const [expanded, setExpanded] = useState(true);
+  imgQR != undefined ? (moduleActive = true) : (moduleActive = false);
   return (
     <div className="card post-preview lift mt-4" style={{ cursor: "pointer" }}>
       <img className="card-img-top img-fluid image-modal" src={imgModal} />

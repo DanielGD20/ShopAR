@@ -25,7 +25,6 @@ const ShopPage = () => {
   const [nameCategory, setNameCategory] = useState("");
   const [dataShopAsync, setDataShopAsync] = useState([]);
   const [isLoading, setLoading] = useState(true);
-  const [lastState, setLastState] = useState(true);
   const [clickedBigger, setClickedBigger] = useState(false);
 
   //Multiples fetch por componentes
@@ -42,22 +41,13 @@ const ShopPage = () => {
   const changeDataShop = (newState) => {
     console.log(newState);
     if (newState == false) {
-      setLastState(newState);
+      loader();
       setCategoryClicked(newState);
+      setLoading(true);
+      console.log(isLoading);
     } else {
-      if (newState == lastState) {
-        console.log(newState + "" + lastState);
-        console.log("dos presionados");
-        setLastState(newState);
-        setCategoryClicked(newState);
-      } else {
-        setCategoryClicked(newState);
-      }
+      setCategoryClicked(newState);
     }
-  };
-  const changeDataShopBigger = (newState) => {
-    setClickedBigger(newState);
-    console.log(clickedBigger);
   };
   const getCategoryName = (nameCategory) => {
     setNameCategory(nameCategory.toUpperCase());
@@ -69,26 +59,15 @@ const ShopPage = () => {
   };
 
   const loader = () => {
+    console.log("loader");
     if (dataShopAsync.length == 0) {
       setTimeout(() => {
         setLoading(false);
-      }, 5000);
+      }, 4000);
+    } else {
+      setLoading(false);
     }
   };
-
-  //Use efect para cargar en true la pestaña de comunicacion apenas
-  //se inicalice el componente
-  useEffect(() => {
-    if (dataShopAsync.length == 0) {
-      setTimeout(() => {
-        setLoading(false);
-      }, 5000);
-    }
-    if (!categoryClicked) {
-      setDataShopAsync([]);
-    }
-    setClickedBigger(false);
-  }, []);
 
   //Funcion principal
   return (
@@ -111,7 +90,7 @@ const ShopPage = () => {
       <HeaderTienda imageUrl="/images/foto3.jpg">
         <Title
           titulo={shop}
-          descripcion="¡Selecciona la categoría de interés y deisfruta de la realidad aumentada!"
+          // descripcion="¡Selecciona la categoría de interés y deisfruta de la realidad aumentada!"
         />
       </HeaderTienda>
       <Container title="ShopAR - Tienda">
@@ -158,26 +137,43 @@ const ShopPage = () => {
                     imageUrl="/images/new.gif"
                     title="¡Conóce las primeras implementaciones en Realidad Aumentada!"
                     description="No te quedes sin probarlo, selecciona 'NUEVOS' en el menú"
-                    changeDataShopBigger={changeDataShopBigger}
+                    changeDataShopBigger={changeDataShop}
                   />
                   <BiggerCardComponent
                     imageUrl="/images/black.gif"
                     title="¡Se acerca Black Friday!"
                     description="Conóce nuestras ofertas %"
-                    changeDataShopBigger={changeDataShopBigger}
+                    changeDataShopBigger={changeDataShop}
                   />
                   <BiggerCardComponent
                     imageUrl="https://media.giphy.com/media/PtLRJXYSWDGOk/giphy.gif"
                     title="Conóce Nuestras Ofertas del Día"
                     description="No te quedes sin su producto"
-                    changeDataShopBigger={changeDataShopBigger}
+                    changeDataShopBigger={changeDataShop}
                   />
                 </ContentShop>
               ) : (
                 <>
                   <ContentShop name={nameCategory} getItemShop={getItemShop}>
                     {isLoading ? (
-                      <Loader />
+                      dataShopAsync == 0 ? (
+                        <Loader />
+                      ) : (
+                        dataShopAsync.map((item) => {
+                          return (
+                            <CardComponent
+                              imageUrl={item.imageUrl}
+                              imageAlt={item.imageAlt}
+                              title={item.title}
+                              description={item.description}
+                              isNuevo={
+                                item.nuevo != undefined ? item.nuevo : false
+                              }
+                              imgQR={item.imgQR}
+                            />
+                          );
+                        })
+                      )
                     ) : (
                       dataShopAsync.map((item) => {
                         return (

@@ -18,7 +18,7 @@ const SearchBar = () => {
               className="btn btn-primary btn-block btn-marketing rounded-pill"
               type="submit"
             >
-              Buscar
+              Buscar <i class="fas fa-search"></i>
             </button>
           </div>
         </div>

@@ -1,9 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 
 const Accordion = ({ i, expanded, setExpanded, imgQR }) => {
-  const isOpen = i === expanded;
-  console.log(imgQR);
-
+  var isOpen = i === expanded;
+  console.log(isOpen);
+  isOpen = true;
   // By using `AnimatePresence` to mount and unmount the contents, we can animate
   // them in and out while also only rendering the contents of open accordions
   return (
@@ -21,7 +22,10 @@ const Accordion = ({ i, expanded, setExpanded, imgQR }) => {
               className="post-preview-meta-details-name"
               style={{ color: "white", fontSize: "16px" }}
             >
-              ¡Realidad Aumentada!
+              <h1 style={{ fontSize: "17px", color: "white" }}>
+                Utiliza tu cámara para escanear el código y visualizar la
+                realidad aumentada.
+              </h1>
             </div>
           </div>
         </div>
@@ -41,12 +45,13 @@ const Accordion = ({ i, expanded, setExpanded, imgQR }) => {
           >
             <div className="container">
               <div className="row">
-                <div className="col-6 pl-4 ml-0 mt-5 pr-0" align="left">
+                {/* <div className="col-6 pl-4 ml-0 mt-5 pr-0" align="left">
                   <h1 style={{ fontSize: "25px" }}>
-                    Utiliza tu cámara para escanear el código y visualizar la realidad aumentada.
+                    Utiliza tu cámara para escanear el código y visualizar la
+                    realidad aumentada.
                   </h1>
-                </div>
-                <div className="col-6 mt-2 ml-0" align="center">
+                </div> */}
+                <div className="col-12 mt-2 ml-2" align="center">
                   <img
                     src={imgQR}
                     alt="Code"
@@ -58,6 +63,15 @@ const Accordion = ({ i, expanded, setExpanded, imgQR }) => {
                       paddingRight: "30px",
                     }}
                   />
+                  <h1
+                    style={{
+                      fontSize: "25px",
+                      marginLeft: "-20px",
+                      marginBottom: "25px",
+                    }}
+                  >
+                    ¡Realidad Aumentada!
+                  </h1>
                 </div>
               </div>
             </div>

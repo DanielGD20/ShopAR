@@ -61,7 +61,7 @@ header .container {
 }
 
 .title {
-  font-size: 3.5rem !important;
+  font-size: 3.5rem;
 }
 .subtitle {
   font-size: 1.8rem !important;
@@ -90,7 +90,7 @@ html {
 
 .page-overflow {
   min-height: 20px;
-  max-height: 78.1vh;
+  max-height: 77.1vh;
 }
 
 .categories {
@@ -185,6 +185,6 @@ html {
   padding: 10px;
 }
 
-svg {
+svg .menu {
   fill: white;
 }

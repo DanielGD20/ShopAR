@@ -20,7 +20,11 @@ const loaderVariants = {
 
 const Loader = () => {
   return (
-    <div className="container" align="center">
+    <div
+      className="container"
+      align="center"
+      style={{ marginLeft: "130%", marginTop: "100%" }}
+    >
       <motion.div
         className="loader"
         variants={loaderVariants}

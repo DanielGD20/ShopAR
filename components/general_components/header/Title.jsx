@@ -20,8 +20,13 @@ const Title = ({ titulo, descripcion }) => {
         },
       }}
     >
-      <h1 className="page-header-title mb-3 text-white title">{titulo}</h1>
-      <h2 className="text-white subtitle">{descripcion}</h2>
+      <h1
+        className="page-header-title text-white title"
+        style={{ fontSize: "5.5rem", marginTop: "2.1rem" }}
+      >
+        {titulo}
+      </h1>
+      {/* <h2 className="text-white subtitle">{descripcion}</h2> */}
     </motion.div>
   );
 };

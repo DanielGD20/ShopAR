@@ -83,11 +83,12 @@ const CardComponent = ({
         </div>
         <div className="card-footer">
           <div className="post-preview-meta">
-            <img className="post-preview-meta-img" src="/images/info.png" />
+            <div className="post-preview-meta-img">
+              <i class="fas fa-mouse-pointer"></i>
+            </div>
             <div className="post-preview-meta-details">
-              <a data-8code="6rfgc"></a>
               <div className="post-preview-meta-details-name">
-                Más Información
+                Conóce más de este producto
               </div>
             </div>
           </div>
@@ -99,6 +100,16 @@ const CardComponent = ({
         onRequestClose={() => closeModal()}
         id="modal"
       >
+        <div align="right">
+          <button
+            class="btn btn-danger"
+            style={{ marginBottom: "-20px", marginTop: "-20px" }}
+            onClick={closeModal}
+          >
+            X
+          </button>
+        </div>
+
         <ItemModal
           closeModal={closeModal}
           imgModal={imageUrl}
