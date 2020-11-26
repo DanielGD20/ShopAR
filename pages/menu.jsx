@@ -51,7 +51,7 @@ const Index = ({ shops }) => {
 };
 
 Index.getInitialProps = async (ctx) => {
-  const response = await fetch("http://localhost:3000/api/shops");
+  const response = await fetch("/api/shops");
   const shops = await response.json();
   console.log(shops);
   return { shops };
