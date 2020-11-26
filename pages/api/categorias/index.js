@@ -1,6 +1,6 @@
 import { firestore } from "../firebase/admin";
 import Cors from "cors";
-import initMiddleware from "../../lib/init-middleware";
+import initMiddleware from "../../../lib/init-middleware";
 
 // Initialize the cors middleware
 const cors = initMiddleware(
@@ -11,7 +11,7 @@ const cors = initMiddleware(
   })
 );
 
-export default (req, res) => {
+export default async (req, res) => {
   //cors
   // Run cors
   await cors(req, res);
