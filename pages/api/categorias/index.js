@@ -1,22 +1,14 @@
 import { firestore } from "../firebase/admin";
-import Cors from "cors";
-import initMiddleware from "../../../lib/init-middleware";
-
-// Initialize the cors middleware
-const cors = initMiddleware(
-  // You can read more about the available options here: https://github.com/expressjs/cors#configuration-options
-  Cors({
-    // Only allow requests with GET, POST and OPTIONS
-    methods: ["GET", "POST", "OPTIONS"],
-  })
-);
+import NextCors from "nextjs-cors";
 
 export default async (req, res) => {
-  //cors
-  // Run cors
-  await cors(req, res);
-
   //logica
+  await NextCors(req, res, {
+    //Options
+    methods: ["GET"],
+    origin: "*",
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  });
   firestore
     .collection("categorias")
     .orderBy("orden", "asc")
