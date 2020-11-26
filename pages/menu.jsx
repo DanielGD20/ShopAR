@@ -8,29 +8,8 @@ import ItemTienda from "../components/index_components/tiendas/ItemTienda";
 
 //Import de librerias externas
 import { motion } from "framer-motion";
-// import { useState } from "react";
-// import { useRouter } from "next/router";
 
 const Index = ({ shops }) => {
-  // startScreenSaver({
-  //   timeout: 3000,
-  //   width: 30,
-  //   height: 30,
-  //   exitTimeout: 1000,
-  // });
-  // const router = useRouter();
-
-  // function conteoRegresivo() {
-  //   console.log("Comenzando con la cuenta regresiva");
-  //   setTimeout(() => {
-  //     router.push("ScreenSaver");
-  //   }, 6000);
-  // }
-
-  // useState(() => {
-  //   conteoRegresivo();
-  // }, []);
-
   //Funcion Principal
   return (
     <motion.div

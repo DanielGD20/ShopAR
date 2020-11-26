@@ -15,7 +15,7 @@ class MyDocument extends Document {
           <script src="https://cdn.8thwall.com/web/share/embed8.js"></script>
           <script
             src="https://kit.fontawesome.com/512b530c56.js"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           ></script>
         </body>
       </Html>
