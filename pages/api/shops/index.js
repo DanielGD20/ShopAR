@@ -1,4 +1,4 @@
-import { firestore } from "../../firebase/admin";
+import { firestore } from "../firebase/admin";
 
 function getShops(req, res) {
   firestore

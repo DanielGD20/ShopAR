@@ -1,6 +1,6 @@
 {
-  "name": "ShopAR",
-  "version": "1.0.0",
+  "name": "shopar",
+  "version": "1.2.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,8 +15,9 @@
   "dependencies": {
     "@popmotion/popcorn": "^0.4.4",
     "bootstrap": "^4.5.2",
+    "dotenv": "^8.2.0",
     "es6-promise": "^4.2.8",
-    "firebase": "^7.23.0",
+    "firebase": "^7.24.0",
     "firebase-admin": "^9.2.0",
     "framer-motion": "^2.7.7",
     "isomorphic-fetch": "^3.0.0",
